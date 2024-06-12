@@ -1,13 +1,10 @@
-<template>
-  <div>
-
-  </div>
-</template>
-
 <script>
   import axios from 'axios';
+  import ProjectCardComponent from './components/ProjectCardComponent.vue'
   export default {
-
+    components:{
+      ProjectCardComponent,
+    },
     data(){
       return{
         projects : []
@@ -18,17 +15,26 @@
       fetchProjects(){
         
         axios.get('http://127.0.0.1:8000/api/projects').then((res)=>{
-          console.log(res.data);
+          
+          this.projects = res.data.results
+          //console.log(this.projects)
         })
       }
     },
 
     created(){
       this.fetchProjects()
+      
     }
   
   }
 </script>
+
+<template>
+  <ul class="row">
+    <ProjectCardComponent v-for="projectItem in projects" :key="projectItem.id" :item="projectItem"/>
+  </ul>
+</template>
 
 <style lang="scss" scoped>
 

@@ -1,17 +1,20 @@
 <script>
 
-//import ProjectCardComponent from './components/ProjectCardComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
 //import "bootstrap/dist/css/bootstrap.min.css";
 //import 'bootstrap'
 export default {
-  // components: {
-  //   ProjectCardComponent,
-  // },
+  components: {
+    HeaderComponent,
+  },
 }
 </script>
 
 <template>
-  <RouterView/>
+  <HeaderComponent/>
+  <div class="container">
+    <RouterView />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

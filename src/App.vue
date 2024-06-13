@@ -60,6 +60,7 @@ export default {
     </ul>
 
   </div>
+  <RouterView/>
 </template>
 
 <style lang="scss" scoped></style>

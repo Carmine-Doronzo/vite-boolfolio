@@ -11,6 +11,7 @@ export default {
 
   <li class="card col-3 ">
     <p>repo name: {{ item.name }}</p>
+    <RouterLink :to="{name:'show', params:{slug: item.slug}}"> More ...</RouterLink>
     <p>description: {{ item.description }}</p>
     
     <p v-if="item.type_id === null">type: no category</p>
